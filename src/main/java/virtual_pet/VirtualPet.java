@@ -9,6 +9,8 @@ public class VirtualPet {
     
     private int waste;
 
+    private int tick;
+
     public VirtualPet(String name) {
         this.name = name;
         this.hunger = 50;
@@ -48,9 +50,11 @@ public class VirtualPet {
         return this.waste;
     }
 
+
     public void feed() {
         this.hunger = this.hunger - 5;
         this.thirst = this.thirst + 3;
+        this.waste = this.waste + 5;
     }
 
     public void water() {
@@ -66,7 +70,8 @@ public class VirtualPet {
     public void tick() {
         this.hunger = this.hunger + 2;
         this.thirst = this.thirst + 2;
-        this.waste = this.waste + 2;
+        this.waste = this.waste + 2; 
+
     }
 
 }

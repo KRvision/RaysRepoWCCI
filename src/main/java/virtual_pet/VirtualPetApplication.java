@@ -12,10 +12,12 @@ public class VirtualPetApplication {
         int choice;
         VirtualPet scooby = new VirtualPet ("Scooby");
 
+        System.out.println("My name is " + scooby.getName());
+
 
 
         do {
-            System.out.println("My name is " + scooby.getName());
+            
             System.out.println("Hunger: " + scooby.getHunger());
             System.out.println("Thirst: " + scooby.getThirst());
             System.out.println("Waste: " + scooby.getWaste());
@@ -30,23 +32,25 @@ public class VirtualPetApplication {
             choice = scanner.nextInt();
 
             if (choice == 1) {
-                System.out.println("Message");
+                System.out.println("Feed Scooby some scooby snacks");
                 scooby.feed();
             } else if (choice == 2) {
+                System.out.println("Give Scooby some water");
                 scooby.water();
             } else if (choice == 3) {
+                System.out.println("Let Scooby outside because he has to go!");
                 scooby.waste();
             } else if (choice != 4) {
-                System.out.println("Please choose options 1-4!");
+                System.out.println("Please choose options 1-3!");
             }
-        
+            scooby.tick();       
         }
         
         while (choice != 4);
-        System.out.println("Bye bye Scoob");
-        scanner.close();
         
+        System.out.println("Bye bye Scoob");
+        scanner.close();        
         }
-
+        
 
 }
