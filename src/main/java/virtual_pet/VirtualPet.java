@@ -9,7 +9,7 @@ public class VirtualPet {
     
     private int waste;
 
-    private int tick;
+    
 
     public VirtualPet(String name) {
         this.name = name;
@@ -52,25 +52,28 @@ public class VirtualPet {
 
 
     public void feed() {
-        this.hunger = this.hunger - 5;
-        this.thirst = this.thirst + 3;
-        this.waste = this.waste + 5;
+        setHunger(getHunger() - 5);
+        setThirst(getThirst() + 3); 
+        setWaste(getWaste() + 5);
     }
 
     public void water() {
-        this.thirst = this.thirst - 5;
-        this.waste = this.waste + 7;
+        setHunger(getHunger() + 2);
+        setThirst(getThirst()- 10);
+        setWaste(getWaste() + 5);
     }
 
     public void waste() {
-        this.waste = this.waste - 5;
+        setHunger(getHunger() + 5);
+        setThirst(getThirst() + 3); 
+        setWaste(getWaste() - 5);
     }
 
 
     public void tick() {
-        this.hunger = this.hunger + 2;
-        this.thirst = this.thirst + 2;
-        this.waste = this.waste + 2; 
+        setHunger(getHunger() + 2);
+        setThirst(getThirst() + 2); 
+        setWaste(getWaste() + 2);
 
     }
 
